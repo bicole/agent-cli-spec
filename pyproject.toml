@@ -1,0 +1,27 @@
+[project]
+name = "agent-cli-spec"
+version = "1.0.0"
+description = "Versioned modular CLI specification, schema, and profile validator (agent-cli-validate)."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "Apache-2.0" }
+dependencies = []
+
+[dependency-groups]
+dev = [
+  "pytest>=8.0",
+]
+
+[project.scripts]
+agent-cli-validate = "agent_cli_spec.validate:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/agent_cli_spec"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

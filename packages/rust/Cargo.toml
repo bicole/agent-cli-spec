@@ -1,0 +1,8 @@
+[package]
+name = "agent-clikit"
+version = "1.0.0"
+edition = "2021"
+description = "Zero-dependency Rust reference implementation for agent-cli-spec."
+license = "Apache-2.0"
+
+[dependencies]

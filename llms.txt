@@ -1,0 +1,8 @@
+# agent-cli-spec
+
+> Versioned modular CLI specification, JSON Schema, multi-language `clikit` reference libraries (Go, Python, Rust), and `agent-cli-validate` conformance validator. Merges `help-agent-spec`.
+
+- Spec: `SPEC.md` (`core@1.0.0`, `json-output@1.0.0`, `xdg-dirs@1.0.0`, `tty-update-check@1.0.0`, `tty-tui-guard@1.0.0`, `path-install@1.0.0`)
+- Profiles: `core@1.0.0`, `agent-friendly@1.0.0`, `full@1.0.0`, `custom` (via `cli-spec.json`)
+- Validator: `agent-cli-validate [-ha] [--json] [--cmd CMD | --manifest cli-spec.json] [--profile P]`
+- Reference packages: `packages/go/clikit`, `packages/python` (`agent-clikit`), `packages/rust` (`agent-clikit`)

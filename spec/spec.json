@@ -1,0 +1,47 @@
+{
+  "spec_version": "1.0.0",
+  "modules": {
+    "core": {
+      "version": "1.0.0",
+      "description": "-ha/--help-agent (<=500 chars, plain UTF-8, flag parity with -h), -h/--help, --version, standard exit codes",
+      "has_validator": true
+    },
+    "json-output": {
+      "version": "1.0.0",
+      "description": "--json emits pure JSON on stdout; diagnostics go to stderr",
+      "has_validator": true
+    },
+    "xdg-dirs": {
+      "version": "1.0.0",
+      "description": "Cross-platform XDG_*_HOME and agent-stack directory resolution",
+      "has_validator": false
+    },
+    "tty-update-check": {
+      "version": "1.0.0",
+      "description": "24h-cached update check, stderr-only in interactive TTYs",
+      "has_validator": false
+    },
+    "tty-tui-guard": {
+      "version": "1.0.0",
+      "description": "Interactive-TTY-only TUI activation; fail-fast exit 2 in non-TTY contexts",
+      "has_validator": true
+    },
+    "path-install": {
+      "version": "1.0.0",
+      "description": "Installable to ~/.local/bin without adding repo path to PATH",
+      "has_validator": false
+    }
+  },
+  "profiles": {
+    "core@1.0.0": ["core@1.0.0"],
+    "agent-friendly@1.0.0": ["core@1.0.0", "json-output@1.0.0", "tty-tui-guard@1.0.0"],
+    "full@1.0.0": [
+      "core@1.0.0",
+      "json-output@1.0.0",
+      "xdg-dirs@1.0.0",
+      "tty-update-check@1.0.0",
+      "tty-tui-guard@1.0.0",
+      "path-install@1.0.0"
+    ]
+  }
+}

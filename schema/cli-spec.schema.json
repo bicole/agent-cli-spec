@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/bicole/agent-cli-spec/schema/cli-spec.schema.json",
+  "title": "AgentCLISpecManifest",
+  "description": "Declares which versioned agent-cli-spec profile or modules a CLI tool implements.",
+  "type": "object",
+  "required": ["spec_version", "binary"],
+  "properties": {
+    "spec_version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+    "binary": {
+      "type": "string",
+      "minLength": 1
+    },
+    "profile": {
+      "type": "string",
+      "enum": ["core@1.0.0", "agent-friendly@1.0.0", "full@1.0.0", "custom"]
+    },
+    "modules": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string",
+        "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+      }
+    },
+    "json_probe_args": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "tui_probe_args": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "max_ha_chars": {
+      "type": "integer",
+      "minimum": 100,
+      "default": 500
+    }
+  },
+  "additionalProperties": false
+}

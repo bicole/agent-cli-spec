@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+dist/
+*.egg-info/
+
+# Rust
+packages/rust/target/
+
+# Go
+*.exe
+*.test
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+.agent-changelog.md
+.agent-checkpoint.json
